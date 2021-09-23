@@ -1,28 +1,33 @@
 <ion-header>
   <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="login"></ion-back-button>
+    </ion-buttons>
     <ion-title>Registro</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-item>
-    <ion-label>Nombre:</ion-label>
-    <ion-input placeholder="Aqui su nombre" #nombre></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label>Apellido:</ion-label>
-    <ion-input placeholder="Aqui su apellido" #apellido></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label>Nombre de usuario:</ion-label>
-    <ion-input placeholder="Ej: Deltalpha0" #nomUsuario></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label>Contraseña:</ion-label>
-    <ion-input type="password" placeholder="Ingrese una contraseña" #contrasena></ion-input>
-  </ion-item>
+  <form [formGroup]="formularioRegistro" (Keyup.enter)="agregar()">
+    <ion-item>
+      <ion-label>Nombre</ion-label>
+      <ion-input formControlName="nombre"#nombre></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Usuario</ion-label>
+      <ion-input formControlName="usuario"#usuario></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Contraseña</ion-label>
+      <ion-input formControlName="password" type="password" #contrasena></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Confirmar contraseña</ion-label>
+      <ion-input formControlName="confirmacionPassword" type="password"></ion-input>
+    </ion-item>
+  </form>
     <br>
-    <ion-button expand="block" shape="round" (click)="agregar(nombre, apellido, nomUsuario, contrasena)">
-      Registrar
-    </ion-button>
+  <ion-button expand="block" shape="round" (click)="agregar(nombre, usuario, contrasena)">
+    Registrar
+  </ion-button>
 </ion-content>

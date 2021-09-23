@@ -20,13 +20,12 @@ export class UsuariosService {
     this.usuarios = this.usuarios.filter(x=> {return x.id != id})
   }
 
-  addUsuario(nombre: string, apellido: string, nomUsuario: string, contrasena: string)
+  addUsuario(nombre: string, usuario: string, contrasena: string)
   {
     this.usuarios.push(
       {id      : this.usuarios.length + 1,
       nombre  : nombre,
-      apellido : apellido,
-      nomUsuario : nomUsuario,
+      usuario : usuario,
       contrasena : contrasena   
       })
   }

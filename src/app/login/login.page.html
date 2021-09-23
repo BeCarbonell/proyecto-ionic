@@ -8,15 +8,17 @@
   <ion-text class="ion-text-center">
     <h1>Ingrese sus datos</h1>
   </ion-text>
-  <ion-item>
-    <ion-label>Usuario:</ion-label>
-    <ion-input placeholder="ej: AlphaDelta000" #nombre></ion-input>
-  </ion-item>
+  <form [formGroup]="formularioLogin">
+    <ion-item>
+      <ion-label>Usuario:</ion-label>
+      <ion-input formControlName="usuario" placeholder="ej: AlphaDelta000" #nombre></ion-input>
+    </ion-item>
 
-  <ion-item>
-    <ion-label>Contraseña:</ion-label>
-    <ion-input placeholder="Aqui su contraseña" type="password" #contraseña></ion-input>
-  </ion-item>
+    <ion-item>
+      <ion-label>Contraseña:</ion-label>
+      <ion-input formControlName="password" placeholder="Aqui su contraseña" type="password" #contraseña></ion-input>
+    </ion-item>
+  </form>
     <br><br>
     <ion-button expand="block" shape="round" (Click)="redireccion()">
       Ingresar
